@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <PackageId>AdMaui.MetaAdapter.Android</PackageId>
+    <Authors>idenardi</Authors>
+    <Description>Native Android dependencies for the Meta Audience Network adapter, enabling AdMob mediation bidding in .NET MAUI apps.</Description>
+
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>  <!-- ou PackageLicenseFile -->
+    <PackageProjectUrl>https://github.com/idenardi/AdMaui.MetaAdapter</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/idenardi/AdMaui.MetaAdapter</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>ads;maui;android;meta;admob;adapter;facebook</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\..\assets\icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  
+	<ItemGroup>
+    <AndroidLibrary Include="../native/Libraries/facebook-6.21.0.0.aar" Bind="false" />
+		<AndroidLibrary Include="../native/Libraries/AudienceNetwork.aar" Bind="false" />
+	</ItemGroup>
+</Project>

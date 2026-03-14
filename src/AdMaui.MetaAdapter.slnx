@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/ios/">
+    <Project Path="ios\MetaAds\MetaAds.csproj" />
+  </Folder>
+  <Folder Name="/android/">
+    <Project Path="android\MetaAds\MetaAds.csproj" />
+  </Folder>
+</Solution>

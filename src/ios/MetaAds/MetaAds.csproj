@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net9.0-ios</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <IsBindingProject>true</IsBindingProject>
+
+    <packageId>AdMaui.MetaAdapter.iOS</packageId>
+    <Authors>idenardi</Authors>
+    <Description>Native iOS bindings for the Meta Audience Network adapter, enabling AdMob mediation bidding in .NET MAUI apps.</Description>
+
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>  <!-- ou PackageLicenseFile -->
+    <PackageProjectUrl>https://github.com/idenardi/AdMaui.MetaAdapter</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/idenardi/AdMaui.MetaAdapter</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>ads;maui;ios;meta;admob;adapter;facebook</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\..\assets\icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!-- Reference to Xcode project -->
+  <ItemGroup>
+    <XcodeProject Include="../native/FBAds/FBAds.xcodeproj">
+      <SchemeName>FBAds</SchemeName>
+    </XcodeProject>
+
+    <!-- Linker flags, Frameworks, WeakFrameworks, etc can be found in the podspec -->
+    <!-- eg: https://github.com/CocoaPods/Specs/blob/master/Specs/2/1/5/FBAudienceNetwork/6.21.0/FBAudienceNetwork.podspec.json -->
+    <NativeReference Include="../native/Frameworks/FBAudienceNetwork.xcframework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+      <ForceLoad>True</ForceLoad>
+      <LinkerFlags>-ObjC -lc++ -lxml2 -lz</LinkerFlags>
+      <Frameworks>AudioToolbox AppTrackingTransparency StoreKit CoreGraphics UIKit Foundation Security CoreImage AVFoundation CoreMedia</Frameworks>
+      <WeakFrameworks>AdSupport CFNetwork CoreMotion CoreTelephony LocalAuthentication SafariServices SystemConfiguration VideoToolbox WebKit</WeakFrameworks>
+      <Visible>True</Visible>
+    </NativeReference>
+
+    <!-- Linker flags, Frameworks, WeakFrameworks, etc can be found in the podspec -->
+    <!-- eg: https://github.com/CocoaPods/Specs/blob/master/Specs/4/1/b/GoogleMobileAdsMediationFacebook/6.21.0.0/GoogleMobileAdsMediationFacebook.podspec.json -->
+    <NativeReference Include="../native/Frameworks/MetaAdapter.xcframework">
+      <Kind>Static</Kind>
+      <SmartLink>False</SmartLink>
+      <ForceLoad>True</ForceLoad>
+      <Frameworks></Frameworks>
+      <Visible>True</Visible>
+    </NativeReference>
+  </ItemGroup>
+</Project>
