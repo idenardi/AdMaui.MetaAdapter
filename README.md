@@ -4,10 +4,10 @@ NuGet packages for .NET MAUI that provide the native dependencies required to us
 
 ## Packages
 
-| Package | Platform |
-|---|---|
-| `AdMaui.MetaAdapter.Android` | Android |
-| `AdMaui.MetaAdapter.iOS` | iOS |
+| Package | Platform | NuGet Version | 
+|---|---| --- |
+| `AdMaui.MetaAdapter.Android` | Android | [![NuGet version (AdMaui.MetaAdapter.Android)](https://img.shields.io/nuget/v/AdMaui.MetaAdapter.Android.svg?style=flat-square)](https://www.nuget.org/packages/AdMaui.MetaAdapter.Android/) |
+| `AdMaui.MetaAdapter.iOS` | iOS | [![NuGet version (AdMaui.MetaAdapter.iOS)](https://img.shields.io/nuget/vpre/AdMaui.MetaAdapter.iOS.svg?style=flat-square)](https://www.nuget.org/packages/AdMaui.MetaAdapter.iOS/) |
 
 The NuGet package version reflects the version of the **Meta Audience Network adapter** (mediation) and **FBAudienceNetwork** SDK bundled in the package. For example, version `6.21.0` corresponds to adapter `6.21.0` and Audience Network SDK `6.21.0`.
 
